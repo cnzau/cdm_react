@@ -1,17 +1,24 @@
-import React from 'react';
-import { Container, Jumbotron } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import PatientContext from '../../context/patient/patientContext';
+import Patients from '../patients/Patients';
+import Search from '../patients/Search';
 
 const Home = (props) => {
+  const patientContext = useContext(PatientContext);
   return (
-    <Container className='main'>
-      <Jumbotron className='text-center jumbo'>
-        <p>
-          Hello,
-          <br />
-          Welcome to the Chronic Disease Management System
-        </p>
-      </Jumbotron>
-    </Container>
+    <>
+      <div
+        className={!patientContext.patients.length ? 'home-default' : undefined}
+      >
+        {!patientContext.patients.length && (
+          <h3 className='text-muted text-center mb-5'>
+            CDM - Hypertensive & Diabetic
+          </h3>
+        )}
+        <Search />
+      </div>
+      <Patients />
+    </>
   );
 };
 

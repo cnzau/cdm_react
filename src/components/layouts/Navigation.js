@@ -21,10 +21,15 @@ const Navigation = () => {
     >
       <Container>
         <h1
-          className='bg-light shadow'
+          className='bg-light shadow text-center'
           style={{ margin: 0, fontSize: '1rem', borderRadius: 20 }}
         >
-          <Navbar.Brand as={Link} to='#' className='text-dark'>
+          <Navbar.Brand
+            as={Link}
+            to='#'
+            className='text-dark'
+            style={{ marginLeft: '1rem' }}
+          >
             CDM
           </Navbar.Brand>
         </h1>
@@ -42,14 +47,14 @@ const Navigation = () => {
             >
               Home
             </Nav.Link>
-            <Nav.Link
+            {/* <Nav.Link
               as={NavLink}
               to='/patients'
               eventKey={getRandom(4, 7)}
               activeClassName='active'
             >
               Patients
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link
               as={NavLink}
               to='/reports'
